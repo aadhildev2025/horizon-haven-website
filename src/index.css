@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* small custom tweaks */
+:root {
+  --accent: #f59e0b; /* amber */
+}
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+html {
+  scroll-behavior: smooth;
+}
+
