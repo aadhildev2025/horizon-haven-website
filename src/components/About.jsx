@@ -7,15 +7,17 @@ export default function About() {
       id="about"
       className="max-w-6xl mx-auto px-6 py-16 scroll-smooth"
     >
+      {/* Wrapper with animation on scroll */}
       <motion.div
         className="grid md:grid-cols-2 gap-12 items-center"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        initial={{ opacity: 0, y: 50 }} // animation starts slightly faded & down
+        whileInView={{ opacity: 1, y: 0 }} // becomes visible when in viewport
+        viewport={{ once: true, amount: 0.3 }} // animate once when 30% is visible
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Left Side - Text */}
+        {/* ================= LEFT SIDE (Text Content) ================= */}
         <div>
+          {/* Section Title */}
           <motion.h3
             className="text-3xl font-bold text-gray-800"
             initial={{ x: -50, opacity: 0 }}
@@ -25,6 +27,7 @@ export default function About() {
             About Horizon Haven
           </motion.h3>
 
+          {/* Description Paragraph */}
           <motion.p
             className="mt-4 text-gray-600 leading-relaxed"
             initial={{ x: -50, opacity: 0 }}
@@ -40,6 +43,7 @@ export default function About() {
             and seamless high-speed Wi-Fi throughout the property.
           </motion.p>
 
+          {/* Hotel Features List */}
           <motion.ul
             className="mt-6 grid grid-cols-2 gap-3 text-sm text-gray-700"
             initial={{ x: -50, opacity: 0 }}
@@ -54,22 +58,22 @@ export default function About() {
             <li>✔ Business Lounge</li>
           </motion.ul>
 
-          {/* Learn More Button */}
+          {/* Call-to-Action Button */}
           <motion.a
             href="#rooms"
             className="mt-6 inline-block bg-amber-500 text-white px-5 py-2 rounded-lg shadow-md hover:bg-amber-600 transition"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.05 }} // hover grows slightly
+            whileTap={{ scale: 0.95 }}  // tap shrinks slightly
           >
             Explore Our Rooms
           </motion.a>
         </div>
 
-        {/* Right Side - Image */}
+        {/* ================= RIGHT SIDE (Image) ================= */}
         <motion.div
           className="rounded-xl overflow-hidden shadow-xl"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.9 }} // image starts small & faded
+          whileInView={{ opacity: 1, scale: 1 }} // zoom-in effect
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
         >
           <img

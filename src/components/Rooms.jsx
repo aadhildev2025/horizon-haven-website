@@ -1,7 +1,8 @@
 import React from "react";
-import RoomCard from "./RoomCard";
+import RoomCard from "./RoomCard"; // Reusable card component for displaying a room
 
 export default function Rooms() {
+  // Array of room objects with details
   const rooms = [
     {
       title: "Deluxe Room",
@@ -44,12 +45,16 @@ export default function Rooms() {
   return (
     <section id="rooms" className="bg-white py-12">
       <div className="max-w-6xl mx-auto px-6">
+        
+        {/* Section Title */}
         <h3 className="text-2xl font-bold">Rooms & Suites</h3>
         <p className="mt-2 text-sm text-gray-600">
           Choose from comfortable room types to suit your needs.
         </p>
 
+        {/* Grid layout for room cards */}
         <div className="mt-6 grid gap-6 grid-cols-1 md:grid-cols-3">
+          {/* Loop through rooms array and render each room using RoomCard */}
           {rooms.map((r) => (
             <RoomCard key={r.title} {...r} />
           ))}

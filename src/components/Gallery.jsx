@@ -2,11 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function Gallery() {
+  // Array of gallery images (Hotel room, pool, restaurant, etc.)
   const images = [
     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80", // Hotel room
-    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80", // Pool ✅ fixed
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80", // Pool
     "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80", // Restaurant
-    "https://images.unsplash.com/photo-1502672023488-70e25813eb80?auto=format&fit=crop&w=1200&q=80", // Suite ✅ fixed
+    "https://images.unsplash.com/photo-1502672023488-70e25813eb80?auto=format&fit=crop&w=1200&q=80", // Suite
     "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80", // Lobby
     "https://images.unsplash.com/photo-1527030280862-64139fba04ca?auto=format&fit=crop&w=1200&q=80", // Spa
     "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80", // Gym
@@ -16,22 +17,26 @@ export default function Gallery() {
   return (
     <section id="gallery" className="bg-white py-12">
       <div className="max-w-6xl mx-auto px-6">
+        
+        {/* Section Title */}
         <h3 className="text-3xl font-bold">Gallery</h3>
         <p className="mt-2 text-gray-600">
           A few snapshots from around the property.
         </p>
 
+        {/* Gallery Grid */}
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-5">
           {images.map((src, i) => (
             <motion.div
               key={i}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05 }} // Slight zoom effect on card
               transition={{ duration: 0.3 }}
               className="overflow-hidden rounded-xl shadow-md"
             >
+              {/* Individual image with hover zoom */}
               <img
                 src={src}
-                alt={`gallery-${i}`}
+                alt={`gallery-${i}`} // Accessibility: alt text with index
                 className="w-full h-44 object-cover hover:scale-110 transition-transform duration-500"
               />
             </motion.div>
